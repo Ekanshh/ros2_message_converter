@@ -185,20 +185,20 @@ def _convert_to_ros_time(field_type, field_value):
     time = None
     if field_type == 'builtin_interfaces/Time':
         time = Time()
-        if 'secs' in field_value:
-            setattr(time,'sec',field_value['secs'])
-            #time = Time(seconds=field_value['secs'])
-        if 'nsecs' in field_value:
-            setattr(time,'nanosec',field_value['nsecs'])
-            #time = Time(nanoseconds=field_value['nsecs'])
+        if 'sec' in field_value:
+            setattr(time,'sec',field_value['sec'])
+            #time = Time(seconds=field_value['sec'])
+        if 'nanosec' in field_value:
+            setattr(time,'nanosec',field_value['nanosec'])
+            #time = Time(nanoseconds=field_value['nanosec'])
     elif field_type == 'builtin_interfaces/Duration':
         time = Duration()
-        if 'secs' in field_value:
-            setattr(time,'sec',field_value['secs'])
-            #time = Duration(seconds=field_value['secs'])
-        if 'nsecs' in field_value:
-            setattr(time,'nanosec',field_value['nsecs'])
-            #time = Duration(nanoseconds=field_value['nsecs'])
+        if 'sec' in field_value:
+            setattr(time,'sec',field_value['sec'])
+            #time = Duration(seconds=field_value['sec'])
+        if 'nanosec' in field_value:
+            setattr(time,'nanosec',field_value['nanosec'])
+            #time = Duration(nanoseconds=field_value['nanosec'])
         
 
     #if field_type == 'time' and field_value == 'now':
@@ -208,10 +208,10 @@ def _convert_to_ros_time(field_type, field_value):
     #        time = rospy.rostime.Time()
     #    elif field_type == 'duration':
     #        time = rospy.rostime.Duration()
-    #    if 'secs' in field_value:
-    #        setattr(time, 'secs', field_value['secs'])
-    #    if 'nsecs' in field_value:
-    #        setattr(time, 'nsecs', field_value['nsecs'])
+    #    if 'sec' in field_value:
+    #        setattr(time, 'sec', field_value['sec'])
+    #    if 'nanosec' in field_value:
+    #        setattr(time, 'nanosec', field_value['nanosec'])
 
     return time
 
@@ -287,8 +287,8 @@ def _convert_from_ros_binary(field_type, field_value):
 
 def _convert_from_ros_time(field_type, field_value):
     field_value = {
-        'secs'  : field_value.secs,
-        'nsecs' : field_value.nsecs
+        'sec'  : field_value.sec,
+        'nanosec' : field_value.nanosec
     }
     return field_value
 
